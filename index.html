@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <!-- Título da página otimizado para SEO -->
+    <title>Ediribeirof - Influenciadora Digital e Maquiadora Profissional</title>
+    <!-- Descrição para motores de busca -->
+    <meta name="description"
+        content="Ediribeirof - Influenciadora e Maquiadora profissional com mais de 600 mil seguidores. Oferece serviços de maquiagem, cursos e publicidade.">
+    <!-- Carrega Tailwind CSS via CDN para estilização -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carrega ícones do Font Awesome via CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Carrega fontes personalizadas do Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Carrega o arquivo CSS personalizado -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="font-sans bg-white text-gray-800">
+    <!-- Define o corpo da página com fonte padrão e fundo branco -->
+
+    <!-- Cabeçalho fixo com navegação -->
+    <header class="fixed w-full bg-white shadow-md z-50 py-4">
+        <div class="container mx-auto px-4 lg:px-6 flex flex-col lg:flex-row lg:items-center lg:justify-between">
+            <!-- Navegação principal, oculta em mobile e visível em desktop -->
+            <nav role="navigation" aria-label="Menu principal"
+                class="hidden lg:flex lg:items-center lg:space-x-2 w-full lg:w-auto">
+                <div class="flex flex-row space-x-2 justify-center mx-auto">
+                    <!-- Links de navegação para as seções -->
+                    <a href="#about"
+                        class="nav-link text-gray-700 hover:text-pink-500 font-semibold text-base whitespace-nowrap">Quem
+                        Sou Eu</a>
+                    <a href="#services"
+                        class="nav-link text-gray-700 hover:text-pink-500 font-semibold text-base whitespace-nowrap">Serviços
+                        Oferecidos</a>
+                    <a href="#cases"
+                        class="nav-link text-gray-700 hover:text-pink-500 font-semibold text-base whitespace-nowrap">Case
+                        de Sucesso</a>
+                    <a href="#partnerships"
+                        class="nav-link text-gray-700 hover:text-pink-500 font-semibold text-base whitespace-nowrap">Marcas
+                        Parceiras</a>
+                    <a href="#faq"
+                        class="nav-link text-gray-700 hover:text-pink-500 font-semibold text-base whitespace-nowrap">FAQ</a>
+                    <a href="#social"
+                        class="nav-link text-gray-700 hover:text-pink-500 font-semibold text-base whitespace-nowrap">Redes
+                        Sociais</a>
+                    <a href="#contact"
+                        class="nav-link text-gray-700 hover:text-pink-500 font-semibold text-base whitespace-nowrap">Contato/Orçamento</a>
+                    <a href="https://ediribeirof.github.io/links/#links"
+                        class="nav-link text-gray-700 hover:text-pink-500 font-semibold text-base whitespace-nowrap"
+                        aria-label="Links exclusivos">Links</a>
+                    <!-- Botão para download do Mídia Kit -->
+                    <a href="https://drive.google.com/file/d/1a_caABlSQJvBCwVdHzP3P3Jclfe-M-r-/view?usp=sharing"
+                        target="_blank" rel="noopener noreferrer"
+                        class="nav-link bg-pink-500 text-white px-6 py-3 rounded-full hover:bg-pink-600 transition text-center">
+                        <span class="block font-bold">Download</span>
+                        <span class="block font-bold">Mídia Kit</span>
+                    </a>
+                </div>
+            </nav>
+            <!-- Botão do menu mobile, visível apenas em telas pequenas -->
+            <button id="mobile-menu-button" aria-expanded="false"
+                class="lg:hidden text-pink-500 focus:outline-none mt-4 self-end" aria-label="Abrir menu de navegação">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <!-- Menu mobile, inicialmente oculto -->
+            <div id="mobile-menu" class="mobile-menu hidden lg:hidden bg-white shadow-md absolute top-full w-full">
+                <div class="mobile-menu-inner container mx-auto px-4 py-2 flex flex-col space-y-2">
+                    <!-- Links do menu mobile, idênticos ao menu desktop -->
+                    <a href="#about"
+                        class="py-2 border-b border-gray-100 text-gray-700 hover:text-pink-500 font-semibold text-base whitespace-nowrap">Quem
+                        Sou Eu</a>
+                    <a href="#services"
+                        class="py-2 border-b border-gray-100 text-gray-700 hover:text-pink-500 font-semibold text-base whitespace-nowrap">Serviços
+                        Oferecidos</a>
+                    <a href="#cases"
+                        class="py-2 border-b border-gray-100 text-gray-700 hover:text-pink-500 font-semibold text-base whitespace-nowrap">Case
+                        de Sucesso</a>
+                    <a href="#partnerships"
+                        class="py-2 border-b border-gray-100 text-gray-700 hover:text-pink-500 font-semibold text-base whitespace-nowrap">Marcas
+                        Parceiras</a>
+                    <a href="#faq"
+                        class="py-2 border-b border-gray-100 text-gray-700 hover:text-pink-500 font-semibold text-base whitespace-nowrap">FAQ</a>
+                    <a href="#social"
+                        class="py-2 border-b border-gray-100 text-gray-700 hover:text-pink-500 font-semibold text-base whitespace-nowrap">Redes
+                        Sociais</a>
+                    <a href="#contact"
+                        class="py-2 border-b border-gray-100 text-gray-700 hover:text-pink-500 font-semibold text-base whitespace-nowrap">Contato/Orçamento</a>
+                    <a href="https://ediribeirof.github.io/links/#links"
+                        class="py-2 border-b border-gray-100 text-gray-700 hover:text-pink-500 font-semibold text-base whitespace-nowrap"
+                        aria-label="Links exclusivos">Links</a>
+                    <a href="https://drive.google.com/file/d/1a_caABlSQJvBCwVdHzP3P3Jclfe-M-r-/view?usp=sharing"
+                        target="_blank" rel="noopener noreferrer"
+                        class="py-2 text-white bg-pink-500 px-6 py-3 rounded-full hover:bg-pink-600 font-semibold text-center">
+                        <span class="block font-bold">Download</span>
+                        <span class="block font-bold">Mídia Kit</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção Hero com imagem de fundo e overlay -->
+    <section id="hero"
+        class="hero-section h-screen flex items-end justify-center text-center bg-cover bg-center relative"
+        style="background-image: url('image/FTdeFundo.png');">
+        <div class="hero-content container mx-auto px-4 relative z-10">
+            <h1 class="text-5xl md:text-6xl font-playfair text-white mb-8 animate-fadeIn visible" lang="pt-BR">Sejam
+                bem-vindas, minhas Fias!</h1>
+            <!-- Botão para contato via WhatsApp -->
+            <a href="http://api.whatsapp.com/send?1=pt_BR&phone=5585997304019&text=Olá! Tudo bem? Tenho interesse em fechar uma parceria de publicidade com a Edi."
+                target="_blank" rel="noopener noreferrer"
+                class="bg-pink-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-pink-600 transition shadow-md animate-fadeIn visible inline-block"
+                aria-label="Contato via WhatsApp para publicidade">Fechar Publicidade</a>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="about" class="pt-40 py-16 bg-gradient-to-b from-pink-50 to-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 font-playfair" lang="pt-BR">Quem sou eu</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="w-full md:w-1/3">
+                    <!-- Imagem otimizada com alt descritivo -->
+                    <img src="image/quem_sou_eu.jpg"
+                        alt="Edivânia Pereira, maquiadora profissional e influenciadora digital" loading="lazy"
+                        class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h3 class="text-2xl font-semibold mb-4 font-playfair" lang="pt-BR">Edi Ribeiro</h3>
+                    <div class="about-content">
+                        <!-- Primeira parte do texto, visível inicialmente -->
+                        <p class="text-gray-600 mb-4 about-text-initial" lang="pt-BR">
+                            Olá! Sou a Edivânia, mas <strong>pode me chamar de Edi</strong>. Sou de Fortaleza, Ce. E
+                            casada com o Gabriel. Estamos juntos há mais de 10 anos. Sou <strong>maquiadora
+                                profissional</strong> há 6 anos e, nos últimos 2 anos, venho compartilhando minha vida
+                            na internet.
+                        </p>
+                        <!-- Segunda parte do texto, inicialmente oculta -->
+                        <p class="text-gray-600 mb-4 about-text-hidden hidden" lang="pt-BR">
+                            Tudo começou quando minhas seguidoras pediram para que eu compartilhasse meus momentos de
+                            humor além dos stories, e assim <strong>meu conteúdo se tornou literalmente minha
+                                vida</strong>. Transformo meus dias em entretenimento, sempre <strong>com muita autenticidade e
+                            bom humor.</strong> Sou extrovertida e adoro transformar desafios em risadas. <strong>Minhas
+                                'fias'</strong>, como carinhosamente chamo minhas seguidoras, fazem parte de cada
+                            momento, conhecendo minha família, acompanhando minhas aventuras na academia, e dando boas
+                            risadas com meu esposo Gabriel, especialmente durante os jogos do Fortaleza. Além disso,
+                            compartilho minha jornada de emagrecimento, mostrando que é possível enfrentar desafios com
+                            leveza e humor. Minha paixão é criar conexões reais e inspirar outras pessoas a viverem suas
+                            vidas com autenticidade e alegria.
+                        </p>
+                        <!-- Contêiner para os botões Ver mais e Recolher -->
+                        <div class="text-center mt-6 about-toggle-container">
+                            <button id="show-more-about"
+                                class="bg-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-pink-600 transition shadow-md">
+                                Ver mais
+                            </button>
+                            <button id="collapse-about"
+                                class="bg-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-pink-600 transition shadow-md hidden">
+                                Recolher
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Serviços -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 font-playfair" lang="pt-BR">Serviços oferecidos</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card de serviço -->
+                <div class="service-card bg-gray-50 p-6 rounded-lg shadow-lg animate-fadeIn"
+                    style="animation-delay: 0.1s;">
+                    <div class="text-pink-500 text-4xl mb-4"><i class="fas fa-box-open" aria-hidden="true"></i></div>
+                    <h3 class="text-xl font-semibold mb-2 font-playfair" lang="pt-BR">Unboxing e Reviews</h3>
+                    <p class="text-gray-600" lang="pt-BR">Apresentação sincera e detalhada de produtos que realmente
+                        utilizo.</p>
+                </div>
+                <div class="service-card bg-gray-50 p-6 rounded-lg shadow-lg animate-fadeIn"
+                    style="animation-delay: 0.3s;">
+                    <div class="text-pink-500 text-4xl mb-4"><i class="fas fa-tshirt" aria-hidden="true"></i></div>
+                    <h3 class="text-xl font-semibold mb-2 font-playfair" lang="pt-BR">Participação em Eventos e
+                        Campanhas</h3>
+                    <p class="text-gray-600" lang="pt-BR">Presença para agregar valor e visibilidade.</p>
+                </div>
+                <div class="service-card bg-gray-50 p-6 rounded-lg shadow-lg animate-fadeIn"
+                    style="animation-delay: 0.4s;">
+                    <div class="text-pink-500 text-4xl mb-4"><i class="fas fa-camera" aria-hidden="true"></i></div>
+                    <h3 class="text-xl font-semibold mb-2 font-playfair" lang="pt-BR">Publipost no Feed</h3>
+                    <p class="text-gray-600" lang="pt-BR">Posts dedicados com textos personalizados e imagens de alta
+                        qualidade.</p>
+                </div>
+                <div class="service-card bg-gray-50 p-6 rounded-lg shadow-lg animate-fadeIn"
+                    style="animation-delay: 0.6s;">
+                    <div class="text-pink-500 text-4xl mb-4"><i class="fas fa-mobile-alt" aria-hidden="true"></i></div>
+                    <h3 class="text-xl font-semibold mb-2 font-playfair" lang="pt-BR">Sequência de Stories</h3>
+                    <p class="text-gray-600" lang="pt-BR">Apresentação do produto ou serviço de forma autêntica, com
+                        interação direta com as seguidoras.</p>
+                </div>
+                <div class="service-card bg-gray-50 p-6 rounded-lg shadow-lg animate-fadeIn"
+                    style="animation-delay: 0.6s;">
+                    <div class="text-pink-500 text-4xl mb-4"><i class="fas fa-video" aria-hidden="true"></i></div>
+                    <h3 class="text-xl font-semibold mb-2 font-playfair" lang="pt-BR">Publicidade em Reels</h3>
+                    <p class="text-gray-600" lang="pt-BR">Criação de vídeos curtos e criativos, alinhados com a
+                        identidade da marca.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Case de Sucesso -->
+    <section id="cases" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 font-playfair" lang="pt-BR">Case de sucesso</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8 bg-white p-8 rounded-lg shadow-lg">
+                <div class="w-full md:w-1/2">
+                    <!-- Imagem otimizada com alt descritivo -->
+                    <img src="image/publicidade.png"
+                        alt="Campanha de publicidade com mais de 30 milhões de visualizações no TikTok" loading="lazy"
+                        class="rounded-lg w-full h-auto">
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h3 class="text-xl font-semibold mb-4 font-playfair" lang="pt-BR">Campanha com mais de 30 milhões de
+                        Visualizações</h3>
+                    <p class="text-gray-600 mb-6" lang="pt-BR">Uma campanha de alto impacto que alcançou mais de 30
+                        milhões de visualizações no TikTok.</p>
+                    <a href="https://www.tiktok.com/@ediribeirof/video/7522224530211884344" target="_blank"
+                        rel="noopener noreferrer"
+                        class="bg-pink-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-pink-600 transition shadow-md"
+                        aria-label="Ver case de sucesso no TikTok">Ver Case</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Marcas Parceiras -->
+    <section id="partnerships" class="py-16 bg-gradient-to-b from-purple-50 to-white">
+        <div class="container mx-auto max-w-6xl px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 font-playfair" lang="pt-BR">Marcas parceiras</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <!-- Logos das marcas parceiras com alt descritivo -->
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <img src="image/shoppin_giga_mall.jpg" alt="Logo do Shopping Giga Mall Messejana" loading="lazy"
+                        class="h-24 w-full object-contain transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <img src="image/academia_gavioes.jpg" alt="Logo da Academia Gaviões 24 Horas" loading="lazy"
+                        class="h-24 w-full object-contain transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <img src="image/power_fit.jpg" alt="Logo da Power Fit" loading="lazy"
+                        class="h-24 w-full object-contain transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <img src="image/exalla_cosmeticos.jpg" alt="Logo da Exalla Cosméticos" loading="lazy"
+                        class="h-24 w-full object-contain transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <img src="image/corEton.jpg" alt="Logo da CorEton" loading="lazy"
+                        class="h-24 w-full object-contain transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <img src="image/buq_care.jpg" alt="Logo da Buq Care" loading="lazy"
+                        class="h-24 w-full object-contain transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <img src="image/casa_freitas.png" alt="Logo da Casa Freitas" loading="lazy"
+                        class="h-24 w-full object-contain transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-lg">
+                    <img src="image/shein.png" alt="Logo da Shein" loading="lazy"
+                        class="h-24 w-full object-contain transition-transform duration-300 hover:scale-105">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção FAQ com accordion -->
+    <section id="faq" class="py-16 bg-gradient-to-b from-white to-purple-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-12 font-playfair" lang="pt-BR">Perguntas frequentes</h2>
+            <div class="max-w-3xl mx-auto space-y-4 faq-container">
+                <!-- FAQ 1 -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="faq-question text-xl font-semibold mb-2 font-playfair cursor-pointer flex justify-between items-center"
+                        aria-expanded="false" aria-controls="faq-answer-1" role="button" tabindex="0">
+                        Como faço para contratar a Edi para divulgar minha marca? <span class="faq-toggle">+</span>
+                    </h3>
+                    <p id="faq-answer-1"
+                        class="faq-answer text-gray-600 max-h-0 overflow-hidden transition-all duration-300"
+                        lang="pt-BR">
+                        Você pode preencher o formulário na aba Orçamento/Parcerias ou falar direto pelo WhatsApp da
+                        assessoria. Assim nossa equipe já recebe as informações da sua campanha e envia uma proposta sob
+                        medida.
+                    </p>
+                </div>
+                <!-- FAQ 2 -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="faq-question text-xl font-semibold mb-2 font-playfair cursor-pointer flex justify-between items-center"
+                        aria-expanded="false" aria-controls="faq-answer-2" role="button" tabindex="0">
+                        A Edi trabalha com quais formatos de entrega? <span class="faq-toggle">+</span>
+                    </h3>
+                    <p id="faq-answer-2"
+                        class="faq-answer text-gray-600 max-h-0 overflow-hidden transition-all duration-300"
+                        lang="pt-BR">
+                        Reels para Instagram e TikTok, combos de Stories (sempre com 4 telas), presença em eventos/lojas
+                        e conteúdos gravados no espaço da marca ou na casa da Edi.
+                    </p>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="faq-question text-xl font-semibold mb-2 font-playfair cursor-pointer flex justify-between items-center"
+                        aria-expanded="false" aria-controls="faq-answer-3" role="button" tabindex="0">
+                        Qual o público da Edi? <span class="faq-toggle">+</span>
+                    </h3>
+                    <p id="faq-answer-3"
+                        class="faq-answer text-gray-600 max-h-0 overflow-hidden transition-all duration-300"
+                        lang="pt-BR">
+                        96% são mulheres, de 20 a 50 anos, altamente engajadas, que buscam autoestima, saúde e
+                        inspiração real.
+                    </p>
+                </div>
+                <!-- Botão Ver mais FAQs, aparece após o FAQ 3 -->
+                <div class="text-center mt-6 faq-toggle-container">
+                    <button id="show-more-faqs"
+                        class="bg-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-pink-600 transition shadow-md">
+                        Ver mais FAQs
+                    </button>
+                </div>
+                <!-- FAQ 4 -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-lg hidden faq-hidden">
+                    <h3 class="faq-question text-xl font-semibold mb-2 font-playfair cursor-pointer flex justify-between items-center"
+                        aria-expanded="false" aria-controls="faq-answer-4" role="button" tabindex="0">
+                        Posso contratar só 1 ou 2 stories? <span class="faq-toggle">+</span>
+                    </h3>
+                    <p id="faq-answer-4"
+                        class="faq-answer text-gray-600 max-h-0 overflow-hidden transition-all duration-300"
+                        lang="pt-BR">
+                        Não. O mínimo é sempre 1 combo com 4 telas. Esse formato garante impacto real e consistência na
+                        comunicação.
+                    </p>
+                </div>
+                <!-- FAQ 5 -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-lg hidden faq-hidden">
+                    <h3 class="faq-question text-xl font-semibold mb-2 font-playfair cursor-pointer flex justify-between items-center"
+                        aria-expanded="false" aria-controls="faq-answer-5" role="button" tabindex="0">
+                        A Edi grava em qualquer local? <span class="faq-toggle">+</span>
+                    </h3>
+                    <p id="faq-answer-5"
+                        class="faq-answer text-gray-600 max-h-0 overflow-hidden transition-all duration-300"
+                        lang="pt-BR">
+                        Sim, desde que o local seja previamente alinhado com a assessoria. Pode ser na casa dela, em
+                        lojas, clínicas, academias ou outros espaços da marca.
+                    </p>
+                </div>
+                <!-- FAQ 6 -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-lg hidden faq-hidden">
+                    <h3 class="faq-question text-xl font-semibold mb-2 font-playfair cursor-pointer flex justify-between items-center"
+                        aria-expanded="false" aria-controls="faq-answer-6" role="button" tabindex="0">
+                        Qual a diferença entre postar no Instagram e no TikTok? <span class="faq-toggle">+</span>
+                    </h3>
+                    <p id="faq-answer-6"
+                        class="faq-answer text-gray-600 max-h-0 overflow-hidden transition-all duration-300"
+                        lang="pt-BR">
+                        No Instagram, o foco é engajamento imediato com a comunidade das “Minhas Fia”. No TikTok, o
+                        alcance pode se multiplicar em escala. Você pode optar por um mesmo vídeo nos dois canais ou
+                        roteiros diferentes para cada plataforma.
+                    </p>
+                </div>
+                <!-- FAQ 7 -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-lg hidden faq-hidden">
+                    <h3 class="faq-question text-xl font-semibold mb-2 font-playfair cursor-pointer flex justify-between items-center"
+                        aria-expanded="false" aria-controls="faq-answer-7" role="button" tabindex="0">
+                        Como funciona a presença VIP da Edi? <span class="faq-toggle">+</span>
+                    </h3>
+                    <p id="faq-answer-7"
+                        class="faq-answer text-gray-600 max-h-0 overflow-hidden transition-all duration-300"
+                        lang="pt-BR">
+                        A presença pode ser em inaugurações, ativações de marca ou eventos especiais. Nesse caso, além
+                        da presença física, podemos incluir cobertura em stories e reels, se negociado no pacote.
+                    </p>
+                </div>
+                <!-- FAQ 8 -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-lg hidden faq-hidden">
+                    <h3 class="faq-question text-xl font-semibold mb-2 font-playfair cursor-pointer flex justify-between items-center"
+                        aria-expanded="false" aria-controls="faq-answer-8" role="button" tabindex="0">
+                        O valor muda de acordo com o público-alvo da campanha? <span class="faq-toggle">+</span>
+                    </h3>
+                    <p id="faq-answer-8"
+                        class="faq-answer text-gray-600 max-h-0 overflow-hidden transition-all duration-300"
+                        lang="pt-BR">
+                        Não. O valor é definido pelo formato contratado (Reels, Stories, Presença, etc). Mas nossa
+                        equipe ajuda a ajustar a linguagem para conectar sua marca diretamente ao público da Edi.
+                    </p>
+                </div>
+                <!-- FAQ 9 -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-lg hidden faq-hidden">
+                    <h3 class="faq-question text-xl font-semibold mb-2 font-playfair cursor-pointer flex justify-between items-center"
+                        aria-expanded="false" aria-controls="faq-answer-9" role="button" tabindex="0">
+                        Em quanto tempo recebo a entrega após fechar contrato? <span class="faq-toggle">+</span>
+                    </h3>
+                    <p id="faq-answer-9"
+                        class="faq-answer text-gray-600 max-h-0 overflow-hidden transition-all duration-300"
+                        lang="pt-BR">
+                        O prazo é definido junto com a assessoria, considerando agenda da Edi e da marca. Mas sempre
+                        prezamos por prazos ágeis e alinhados com o seu objetivo de campanha.
+                    </p>
+                </div>
+                <!-- FAQ 10 -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-lg hidden faq-hidden">
+                    <h3 class="faq-question text-xl font-semibold mb-2 font-playfair cursor-pointer flex justify-between items-center"
+                        aria-expanded="false" aria-controls="faq-answer-10" role="button" tabindex="0">
+                        A Edi só divulga marcas de beleza? <span class="faq-toggle">+</span>
+                    </h3>
+                    <p id="faq-answer-10"
+                        class="faq-answer text-gray-600 max-h-0 overflow-hidden transition-all duration-300"
+                        lang="pt-BR">
+                        Não. Ela já trabalhou com cosméticos, moda, saúde, bem-estar, serviços e até experiências. O que
+                        importa é a marca ter autenticidade e conexão com o público dela.
+                    </p>
+                </div>
+                <!-- FAQ 11 -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-lg hidden faq-hidden">
+                    <h3 class="faq-question text-xl font-semibold mb-2 font-playfair cursor-pointer flex justify-between items-center"
+                        aria-expanded="false" aria-controls="faq-answer-11" role="button" tabindex="0">
+                        Onde a Edi mora? <span class="faq-toggle">+</span>
+                    </h3>
+                    <p id="faq-answer-11"
+                        class="faq-answer text-gray-600 max-h-0 overflow-hidden transition-all duration-300"
+                        lang="pt-BR">
+                        A Edi é de Fortaleza, Ceará. É daqui que ela compartilha sua rotina, treinos e histórias que já
+                        conquistaram o Brasil inteiro.
+                    </p>
+                </div>
+                <!-- FAQ 12 -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-lg hidden faq-hidden">
+                    <h3 class="faq-question text-xl font-semibold mb-2 font-playfair cursor-pointer flex justify-between items-center"
+                        aria-expanded="false" aria-controls="faq-answer-12" role="button" tabindex="0">
+                        Quais redes sociais a Edi mais usa? <span class="faq-toggle">+</span>
+                    </h3>
+                    <p id="faq-answer-12"
+                        class="faq-answer text-gray-600 max-h-0 overflow-hidden transition-all duration-300"
+                        lang="pt-BR">
+                        A Edi está diariamente no Instagram e no TikTok, que são suas principais plataformas. Mas você
+                        também encontra conteúdos no Kwai e no YouTube.
+                    </p>
+                </div>
+                <!-- FAQ 13 -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-lg hidden faq-hidden">
+                    <h3 class="faq-question text-xl font-semibold mb-2 font-playfair cursor-pointer flex justify-between items-center"
+                        aria-expanded="false" aria-controls="faq-answer-13" role="button" tabindex="0">
+                        Qual é o @ da Edi no Instagram? <span class="faq-toggle">+</span>
+                    </h3>
+                    <p id="faq-answer-13"
+                        class="faq-answer text-gray-600 max-h-0 overflow-hidden transition-all duration-300"
+                        lang="pt-BR">
+                        O oficial é @ediribeirof. No TikTok o @ é o mesmo. Qualquer outro perfil não é administrado por
+                        ela.
+                    </p>
+                </div>
+                <!-- FAQ 14 -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-lg hidden faq-hidden">
+                    <h3 class="faq-question text-xl font-semibold mb-2 font-playfair cursor-pointer flex justify-between items-center"
+                        aria-expanded="false" aria-controls="faq-answer-14" role="button" tabindex="0">
+                        A Edi responde mensagens no direct? <span class="faq-toggle">+</span>
+                    </h3>
+                    <p id="faq-answer-14"
+                        class="faq-answer text-gray-600 max-h-0 overflow-hidden transition-all duration-300"
+                        lang="pt-BR">
+                        De vez em quando, sim! Mas como são muitas mensagens todos os dias, a forma mais garantida de
+                        ter contato é através dos stories interativos, caixinhas de perguntas e os grupos oficiais.
+                    </p>
+                </div>
+                <!-- FAQ 15 -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-lg hidden faq-hidden">
+                    <h3 class="faq-question text-xl font-semibold mb-2 font-playfair cursor-pointer flex justify-between items-center"
+                        aria-expanded="false" aria-controls="faq-answer-15" role="button" tabindex="0">
+                        Como entro nos grupos oficiais da Edi? <span class="faq-toggle">+</span>
+                    </h3>
+                    <p id="faq-answer-15"
+                        class="faq-answer text-gray-600 max-h-0 overflow-hidden transition-all duration-300"
+                        lang="pt-BR">
+                        A cada campanha ou projeto, a Edi abre grupos no WhatsApp para quem quer acompanhar de perto. Os
+                        links são sempre divulgados nos stories oficiais do Instagram.
+                    </p>
+                </div>
+                <!-- FAQ 16 -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-lg hidden faq-hidden">
+                    <h3 class="faq-question text-xl font-semibold mb-2 font-playfair cursor-pointer flex justify-between items-center"
+                        aria-expanded="false" aria-controls="faq-answer-16" role="button" tabindex="0">
+                        A Edi realmente lê os comentários? <span class="faq-toggle">+</span>
+                    </h3>
+                    <p id="faq-answer-16"
+                        class="faq-answer text-gray-600 max-h-0 overflow-hidden transition-all duration-300"
+                        lang="pt-BR">
+                        Sim! Ela adora ver o que as “Minhas Fia” estão comentando. Muitas vezes, inclusive, ela responde
+                        ou até cria novos conteúdos a partir do que vocês falam.
+                    </p>
+                </div>
+                <!-- FAQ 17 -->
+                <div class="faq-item bg-white p-6 rounded-lg shadow-lg hidden faq-hidden">
+                    <h3 class="faq-question text-xl font-semibold mb-2 font-playfair cursor-pointer flex justify-between items-center"
+                        aria-expanded="false" aria-controls="faq-answer-17" role="button" tabindex="0">
+                        Como posso apoiar a Edi sem ser marca? <span class="faq-toggle">+</span>
+                    </h3>
+                    <p id="faq-answer-17"
+                        class="faq-answer text-gray-600 max-h-0 overflow-hidden transition-all duration-300"
+                        lang="pt-BR">
+                        Curtindo, comentando e compartilhando os vídeos dela. Esse engajamento é o que faz a mensagem
+                        chegar a mais pessoas. E claro: estar nos grupos oficiais e interagir já é uma forma de apoio
+                        gigante.
+                    </p>
+                </div>
+                <!-- Botão Recolher FAQs, aparece após o último FAQ quando todos estão visíveis -->
+                <div class="text-center mt-6 faq-toggle-container hidden">
+                    <button id="collapse-faqs"
+                        class="bg-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-pink-600 transition shadow-md">
+                        Recolher FAQs
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Redes Sociais -->
+    <section id="social" class="py-16 bg-gradient-to-b from-purple-50 to-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-12 font-playfair" lang="pt-BR">Redes sociais</h2>
+            <div class="flex justify-center space-x-8">
+                <!-- Links para redes sociais com ícones -->
+                <a href="https://www.instagram.com/ediribeirof/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram de Ediribeirof"
+                    class="text-pink-500 hover:text-pink-600 text-4xl transition transform hover:scale-110">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.tiktok.com/@ediribeirof" target="_blank" rel="noopener noreferrer"
+                    aria-label="TikTok de Ediribeirof"
+                    class="text-gray-800 hover:text-gray-900 text-4xl transition transform hover:scale-110">
+                    <i class="fab fa-tiktok" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+<!-- Seção Contato -->
+<section id="contact" class="py-16 bg-gradient-to-b from-purple-100 via-pink-50 to-pink-100 text-center">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-playfair font-bold text-black mb-6">Entre em Contato</h2>
+        <div class="intro-text">
+            <p class="intro-text-title" lang="pt-BR">Quer sua marca com a Edi?</p>
+            <p class="intro-text-subtitle" lang="pt-BR">Preencha o briefing abaixo e diga como deseja aparecer:
+                Reels, Stories, presença em loja ou evento. Assim conseguimos enviar sua proposta personalizada com
+                rapidez.</p>
+        </div>
+        <!-- Formulário de contato -->
+        <div class="bg-white p-6 rounded-lg shadow-lg max-w-2xl mx-auto bg-opacity-80">
+            <form id="contact-form" class="space-y-6">
+                <div>
+                    <label for="contact-brand" class="block text-sm font-semibold text-pink-500"
+                        lang="pt-BR"><strong>Nome da marca/empresa *</strong></label>
+                    <input type="text" id="contact-brand" name="brand" required
+                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                        placeholder="Digite o nome da marca/empresa">
+                    <p class="error-message text-red-500 text-sm mt-1 hidden" id="contact-brand-error">O nome deve
+                        conter letras ou números e ter no mínimo 2 caracteres.</p>
+                </div>
+                <div>
+                    <label for="contact-responsible" class="block text-sm font-semibold text-pink-500"
+                        lang="pt-BR"><strong>Nome do responsável *</strong></label>
+                    <input type="text" id="contact-responsible" name="responsible" required
+                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                        placeholder="Digite o nome do responsável">
+                    <p class="error-message text-red-500 text-sm mt-1 hidden" id="contact-responsible-error">O nome
+                        deve conter apenas letras, espaços ou os caracteres ^ ´ ` ~ Ç ç e ter no mínimo 2
+                        caracteres.</p>
+                </div>
+                <div>
+                    <label for="contact-whatsapp" class="block text-sm font-semibold text-pink-500"
+                        lang="pt-BR"><strong>WhatsApp *</strong></label><br>
+                    <label for="contact-stories" class="block text-sm font-semibold text-pink-500" lang="pt-BR">
+                        <strong>Observação:</strong>
+                        <span class="text-black"> Use o formato (DDD)9XXXX-XXXX, com DDD e o 9 na frente</span>
+                    </label>
+                    <input type="tel" id="contact-whatsapp" name="whatsapp" required maxlength="11"
+                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                        placeholder="Digite o seu WhatsApp">
+                    <p class="error-message text-red-500 text-sm mt-1 hidden" id="contact-whatsapp-error">O número
+                        informado está inválido.</p>
+                </div>
+                <div>
+                    <label for="contact-email" class="block text-sm font-semibold text-pink-500"
+                        lang="pt-BR"><strong>E-mail *</strong></label>
+                    <input type="email" id="contact-email" name="email" required
+                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                        placeholder="Digite seu e-mail">
+                    <p class="error-message text-red-500 text-sm mt-1 hidden" id="contact-email-error">Por favor,
+                        insira um e-mail válido.</p>
+                </div>
+                <div>
+                    <label for="contact-instagram" class="block text-sm font-semibold text-pink-500"
+                        lang="pt-BR"><strong>Instagram da marca *</strong></label>
+                    <input type="text" id="contact-instagram" name="instagram" required
+                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                        placeholder="@nomeusuario">
+                    <p class="error-message text-red-500 text-sm mt-1 hidden" id="contact-instagram-error">O
+                        Instagram deve começar com @ e conter apenas letras, números, pontos ou sublinhados.</p>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-pink-500 mb-2" lang="pt-BR"><strong>Onde deseja
+                            divulgar? *</strong></label>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="platform" value="Instagram" required class="mr-2">
+                            <span>Instagram</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="platform" value="TikTok" class="mr-2">
+                            <span>TikTok</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="platform" value="Ambos" class="mr-2">
+                            <span>Ambos</span>
+                        </label>
+                    </div>
+                    <p class="error-message text-red-500 text-sm mt-1 hidden" id="platform-error">Por favor,
+                        selecione uma plataforma.</p>
+                </div>
+                <div>
+                    <label for="contact-stories" class="block text-sm font-semibold text-pink-500"
+                        lang="pt-BR"><strong>Quantos combos de Stories deseja? *</strong></label><br>
+                    <label for="contact-stories" class="block text-sm font-semibold text-pink-500" lang="pt-BR">
+                        <strong>Observação:</strong>
+                        <span class="text-black">Cada combo equivalente a 4 telas, contratação mínima da Edi é 1
+                            combo</span>
+                    </label>
+                    <input type="number" id="contact-stories" name="stories" min="0"
+                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                        placeholder="Digite a quantidade">
+                    <p class="error-message text-red-500 text-sm mt-1 hidden" id="contact-stories-error">Por favor,
+                        insira um número inteiro maior ou igual a 0.</p>
+                </div>
+                <div>
+                    <label for="contact-reels" class="block text-sm font-semibold text-pink-500"
+                        lang="pt-BR"><strong>Quantos Reels você deseja contratar? *</strong></label>
+                    <input type="number" id="contact-reels" name="reels" min="0"
+                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                        placeholder="Digite a quantidade">
+                    <p class="error-message text-red-500 text-sm mt-1 hidden" id="contact-reels-error">Por favor,
+                        insira um número inteiro maior ou igual a 0.</p>
+                    <p class="error-message text-red-500 text-sm mt-1 hidden" id="reels-stories-error">Pelo menos um
+                        dos campos (Reels ou Combos de Stories) deve ser maior que 0.</p>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-pink-500 mb-2" lang="pt-BR"><strong>Os vídeos
+                            serão: *</strong></label>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="video-type" value="Mesmo" required class="mr-2">
+                            <span>O mesmo para Instagram e TikTok</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="video-type" value="Diferentes" class="mr-2">
+                            <span>Roteiros diferentes (um para cada plataforma)</span>
+                        </label>
+                    </div>
+                    <p class="error-message text-red-500 text-sm mt-1 hidden" id="video-type-error">Por favor,
+                        selecione uma opção para os vídeos.</p>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-pink-500 mb-2" lang="pt-BR"><strong>Presença
+                            física: *</strong></label>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="presence" value="Loja" required class="mr-2">
+                            <span>Presença da Edi em loja para gravação no local</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="presence" value="Casa" class="mr-2">
+                            <span>Gravação na casa da Edi</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="presence" value="Outra" class="mr-2">
+                            <span>Outra opção</span>
+                        </label>
+                        <input type="text" id="contact-presence-other" name="presence-other"
+                            class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 hidden"
+                            placeholder="Descreva a outra opção">
+                    </div>
+                    <p class="error-message text-red-500 text-sm mt-1 hidden" id="presence-error">Por favor,
+                        selecione uma opção de presença física.</p>
+                    <p class="error-message text-red-500 text-sm mt-1 hidden" id="presence-other-error">Por favor,
+                        descreva a outra opção.</p>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-pink-500 mb-2" lang="pt-BR"><strong>Presença VIP
+                            da Edi no seu evento: *</strong></label>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="vip" value="Sim" required class="mr-2">
+                            <span>Sim</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="vip" value="Não" class="mr-2">
+                            <span>Não</span>
+                        </label>
+                    </div>
+                    <p class="error-message text-red-500 text-sm mt-1 hidden" id="vip-error">Por favor, selecione
+                        uma opção para presença VIP.</p>
+                </div>
+                <div>
+                    <label for="contact-observations" class="block text-sm font-semibold text-pink-500"
+                        lang="pt-BR"><strong>Observações adicionais</strong></label>
+                    <textarea id="contact-observations" name="observations"
+                        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                        rows="5" maxlength="500"
+                        placeholder="Digite observações adicionais (opcional, máximo 500 caracteres)"></textarea>
+                    <p class="error-message text-red-500 text-sm mt-1 hidden" id="contact-observations-error">O
+                        texto não pode exceder 500 caracteres.</p>
+                </div>
+                <!-- Botão de envio do formulário -->
+                <button type="submit"
+                    class="w-full bg-pink-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-pink-600 transition shadow-md mt-4"
+                    lang="pt-BR">Quero receber minha proposta</button>
+                <label class="block text-sm font-semibold text-gray-700 mb-2" lang="pt-BR">Ou entre em contato
+                    diretamente com a assessoria da Edi pelo WhatsApp.</label>
+                <div class="space-y-2">
+                    <!-- Botão para contato direto via WhatsApp -->
+                    <button type="button" id="whatsapp-direct"
+                        class="w-full bg-pink-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-pink-600 transition shadow-md mt-2"
+                        lang="pt-BR">Falar agora com a assessoria da Edi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+    <!-- Rodapé -->
+    <footer class="bg-gradient-to-r from-pink-50 to-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <p class="text-gray-600 font-bold" lang="pt-BR">© 2025 Ediribeirof. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="backToTop" aria-label="Voltar ao topo"
+        class="fixed bottom-6 right-6 bg-pink-500 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:scale-110">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Alerta Personalizado -->
+    <div id="custom-alert" class="hidden fixed bottom-4 right-4 bg-pink-50 p-4 rounded-lg shadow-lg z-50">
+        <p id="custom-alert-message" class="text-gray-800"></p>
+        <button id="custom-alert-close" class="mt-2 text-pink-500 font-semibold">OK</button>
+    </div>
+
+    <!-- Carrega o arquivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
