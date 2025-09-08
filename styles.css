@@ -1,0 +1,493 @@
+/* Define variáveis de cores para consistência em todo o site */
+:root {
+    --primary-color: #ec4899; /* Rosa principal usado em botões e links */
+    --primary-hover: #db2777; /* Tom mais escuro de rosa para efeitos de hover */
+    --text-color: #1f2937; /* Cinza escuro para texto principal */
+    --background-light: #fef4f9; /* Fundo rosado claro para elementos */
+    --border-color: #d1d5db; /* Cinza claro para bordas */
+    --error-color: #ef4444; /* Vermelho para mensagens de erro */
+}
+
+/* Define a fonte padrão e estrutura básica do body */
+body {
+    font-family: 'Lora', serif; /* Usa a fonte Lora para texto padrão */
+    scroll-padding-top: 80px; /* Ajusta a rolagem para compensar o header fixo */
+    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da janela */
+    display: flex; /* Usa flexbox para estruturar o layout */
+    flex-direction: column; /* Organiza o conteúdo em coluna */
+    overflow-x: hidden; /* Evita barras de rolagem horizontais no efeito parallax */
+}
+
+/* Define a fonte Playfair Display para títulos */
+.font-playfair {
+    font-family: 'Playfair Display', serif; /* Usa fonte elegante para títulos */
+}
+
+/* Estilo base para a seção hero com efeito parallax */
+.hero-section {
+    position: relative; /* Permite posicionamento absoluto do overlay */
+    height: 100vh; /* Ocupa toda a altura da janela */
+    overflow: hidden; /* Evita que o conteúdo transborde */
+    background-attachment: fixed; /* Fixa a imagem de fundo para efeito parallax em desktop */
+    background-position: center 5%; /* Centraliza a imagem com ajuste para focar no rosto */
+    background-repeat: no-repeat; /* Impede repetição da imagem de fundo */
+    background-size: cover; /* Garante que a imagem cubra toda a seção */
+    z-index: 0; /* Posiciona a seção atrás do conteúdo */
+}
+
+/* Overlay escuro na seção hero para melhorar a legibilidade do texto */
+.hero-section::before {
+    content: ''; /* Elemento vazio para o overlay */
+    position: absolute; /* Posiciona o overlay sobre a imagem de fundo */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa toda a largura */
+    height: 100%; /* Ocupa toda a altura */
+    background: rgba(0, 0, 0, 0.5); /* Overlay semi-transparente preto */
+    z-index: 1; /* Posiciona o overlay acima da imagem, mas abaixo do conteúdo */
+}
+
+/* Estilo para o conteúdo da seção hero */
+.hero-content {
+    position: relative; /* Garante que o conteúdo fique acima do overlay */
+    z-index: 10; /* Posiciona o conteúdo à frente do overlay */
+    width: 100%; /* Ocupa toda a largura do container */
+    padding: 2rem; /* Define padding para desktop e tablet */
+}
+
+/* Estilo para o menu mobile em tela cheia */
+.mobile-menu {
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(-10px); /* Desloca ligeiramente para cima antes de aparecer */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transição suave para visibilidade e posição */
+    position: absolute; /* Posiciona o menu abaixo do header */
+    top: 100%; /* Alinha o topo do menu com o final do header */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta para centralizar com base na largura */
+    width: 80%; /* Limita a largura a 80% da tela */
+    max-width: 400px; /* Define uma largura máxima para tablets */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Adiciona sombra mais pronunciada */
+    z-index: 50; /* Garante que o menu fique acima de outros elementos */
+    border-radius: 12px; /* Bordas arredondadas para um visual moderno */
+    overflow: hidden; /* Garante que o conteúdo respeite as bordas arredondadas */
+}
+
+/* Estilo para o contêiner interno do menu mobile */
+.mobile-menu-inner {
+    background-color: rgba(255, 255, 255, 0.95); /* Fundo branco com leve transparência */
+    padding: 1rem; /* Padding interno ajustado */
+    display: flex; /* Usa flexbox para organizar os links */
+    flex-direction: column; /* Organiza os links em coluna */
+    gap: 0.5rem; /* Espaçamento reduzido entre os itens */
+}
+
+/* Estilo para o menu mobile quando visível */
+.mobile-menu:not(.hidden) {
+    opacity: 1; /* Torna o menu totalmente visível */
+    transform: translateX(-50%) translateY(0); /* Ajusta a transformação para centralizar e posicionar corretamente */
+}
+
+/* Estilo para o alert personalizado */
+#custom-alert {
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.3s ease-in-out; /* Transição suave para visibilidade */
+}
+
+/* Estilo para o alert quando visível */
+#custom-alert:not(.hidden) {
+    opacity: 1; /* Torna o alert visível */
+}
+
+/* Estilo para o contêiner do alert personalizado */
+#custom-alert .bg-pink-50 {
+    background-color: var(--background-light); /* Fundo rosado claro */
+    padding: 1.5rem; /* Padding interno */
+    border-radius: 0.5rem; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    background-color: rgba(254, 244, 249, 0.9); /* Opacidade ajustada */
+}
+
+/* Estilo para mensagens de erro no formulário */
+.error-message {
+    display: none; /* Inicialmente oculto */
+    color: var(--error-color); /* Vermelho para mensagens de erro */
+    font-size: 0.875rem; /* Tamanho da fonte */
+    margin-top: 0.25rem; /* Espaçamento superior */
+}
+
+/* Estilo para mensagens de erro ativas */
+.error-message.active {
+    display: block; /* Exibe a mensagem de erro */
+}
+
+/* Estilo para campos de formulário inválidos */
+input.invalid,
+textarea.invalid {
+    border-color: var(--error-color); /* Borda vermelha para campos inválidos */
+    background-color: #fef2f2; /* Fundo claro para destacar */
+}
+
+/* Estilo para animações de fade-in em elementos */
+.animate-fadeIn {
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(20px); /* Desloca para baixo antes da animação */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Transição suave para opacidade e posição */
+}
+
+/* Estilo para elementos com fade-in quando visíveis */
+.animate-fadeIn.visible {
+    opacity: 1; /* Torna o elemento totalmente visível */
+    transform: translateY(0); /* Move o elemento para sua posição final */
+}
+
+/* Estilo para o accordion do FAQ */
+.faq-item {
+    background-color: #fff; /* Fundo branco */
+    border-radius: 0.5rem; /* Bordas arredondadas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+.faq-question {
+    cursor: pointer; /* Indica que é clicável */
+    transition: color 0.3s ease; /* Transição suave para a cor */
+}
+
+.faq-question:hover {
+    color: var(--primary-color); /* Rosa ao passar o mouse */
+}
+
+.faq-answer {
+    transition: max-height 0.3s ease-in-out; /* Transição suave para a altura */
+    overflow: hidden; /* Oculta o conteúdo fora do limite */
+}
+
+.faq-answer.open {
+    max-height: 300px; /* Altura máxima para exibir a resposta, ajustada para respostas longas */
+}
+
+/* Estilo para o ícone de toggle do FAQ */
+.faq-toggle {
+    font-size: 1.5rem; /* Tamanho do ícone */
+    transition: transform 0.3s ease; /* Transição suave para o ícone */
+}
+
+.faq-question[aria-expanded="true"] .faq-toggle {
+    transform: rotate(45deg); /* Rotaciona o ícone para "-" quando aberto */
+}
+
+/* Estilo para o contêiner dos botões "Ver mais FAQs" e "Recolher FAQs" */
+.faq-toggle-container {
+    display: flex; /* Usa flexbox para alinhar os botões */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    gap: 1rem; /* Espaçamento entre os botões Ver mais FAQs e Recolher FAQs */
+}
+
+/* Estilo para os botões "Ver mais FAQs" e "Recolher FAQs" */
+#show-more-faqs,
+#collapse-faqs {
+    background-color: var(--primary-color); /* Cor de fundo rosa */
+    color: white; /* Texto branco */
+    padding: 0.75rem 1.5rem; /* Padding interno */
+    border-radius: 9999px; /* Bordas totalmente arredondadas */
+    font-weight: 600; /* Peso da fonte */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave para cor e escala */
+}
+
+#show-more-faqs:hover,
+#collapse-faqs:hover {
+    background-color: var(--primary-hover); /* Cor mais escura ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+#show-more-faqs:focus,
+#collapse-faqs:focus {
+    outline: 2px solid var(--primary-color); /* Contorno rosa para foco */
+    outline-offset: 2px; /* Deslocamento do contorno */
+}
+
+/* Garante que o contêiner com classe hidden esteja oculto */
+.faq-toggle-container.hidden {
+    display: none !important; /* Reforça a ocultação inicial */
+}
+
+/* Estilo para o contêiner dos botões da seção Sobre */
+.about-toggle-container {
+    display: flex; /* Usa flexbox para alinhar os botões */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    gap: 1rem; /* Espaçamento entre os botões Ver mais e Recolher */
+}
+
+/* Estilo para os botões "Ver mais" e "Recolher" da seção Sobre */
+#show-more-about,
+#collapse-about {
+    background-color: var(--primary-color); /* Cor de fundo rosa */
+    color: white; /* Texto branco */
+    padding: 0.75rem 1.5rem; /* Padding interno */
+    border-radius: 9999px; /* Bordas totalmente arredondadas */
+    font-weight: 600; /* Peso da fonte */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave para cor e escala */
+}
+
+#show-more-about:hover,
+#collapse-about:hover {
+    background-color: var(--primary-hover); /* Cor mais escura ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+#show-more-about:focus,
+#collapse-about:focus {
+    outline: 2px solid var(--primary-color); /* Contorno rosa para foco */
+    outline-offset: 2px; /* Deslocamento do contorno */
+}
+
+/* Estilo para o botão "Voltar ao Topo" */
+#backToTop {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transição suave */
+}
+
+/* Estilo para o header centralizado */
+header .container {
+    flex-direction: column; /* Organiza o conteúdo em coluna para mobile */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    text-align: center; /* Centraliza o texto */
+    position: relative; /* Necessário para posicionamento absoluto do menu mobile */
+    max-width: 1280px; /* Limita a largura máxima do container */
+}
+
+/* Ajuste para o container do header em desktop */
+header .container.lg\:flex-row {
+    justify-content: space-between; /* Alinha o botão à direita em desktop */
+}
+
+/* Estilo para a navegação no header */
+header nav {
+    margin-bottom: 1rem; /* Espaçamento entre o menu e o botão em mobile */
+}
+
+/* Estilo para os links de navegação */
+header .nav-link {
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    padding: 0 0.5rem; /* Reduz o padding interno para aproximar os itens */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transição suave para cor e fundo */
+}
+
+/* Estilo para o botão de download no header */
+.nav-link.bg-pink-500 {
+    background-color: var(--primary-color); /* Cor de fundo rosa */
+    color: white; /* Texto branco */
+    padding: 0.5rem 1rem; /* Ajustado para alinhar com outros links em desktop */
+    border-radius: 9999px; /* Bordas totalmente arredondadas */
+    text-align: center; /* Centraliza o texto */
+    display: inline-flex; /* Alterado para inline-flex para melhor alinhamento vertical */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    font-size: 0.9rem; /* Reduz o tamanho da fonte para consistência */
+}
+
+/* Estilo para o botão "Download Mídia Kit" em hover */
+.nav-link.bg-pink-500:hover {
+    background-color: var(--primary-hover); /* Cor mais escura ao passar o mouse */
+}
+
+/* Estilo para botões em foco (acessibilidade) */
+.nav-link:focus,
+#mobile-menu-button:focus,
+#backToTop:focus,
+#contact-form button:focus,
+#whatsapp-direct:focus,
+#custom-alert-close:focus,
+#show-more-faqs:focus,
+#collapse-faqs:focus,
+#show-more-about:focus,
+#collapse-about:focus {
+    outline: 2px solid var(--primary-color); /* Contorno rosa para foco */
+    outline-offset: 2px; /* Deslocamento do contorno */
+}
+
+/* Estilo para a seção de contato */
+#contact .intro-text {
+    margin-bottom: 2rem; /* Espaçamento abaixo do texto introdutório */
+}
+
+/* Estilo para o título da introdução na seção de contato */
+.intro-text-title {
+    font-family: 'Playfair Display', serif; /* Fonte elegante */
+    font-size: 2rem; /* Tamanho maior para destaque */
+    color: var(--primary-color); /* Rosa principal */
+    font-weight: 700; /* Negrito */
+    margin-bottom: 0.5rem; /* Espaçamento abaixo */
+    position: relative; /* Para o sublinhado decorativo */
+    display: inline-block; /* Para o sublinhado respeitar o texto */
+    transition: color 0.3s ease; /* Transição suave para hover */
+}
+
+.intro-text-title:hover {
+    color: var(--primary-hover); /* Cor mais escura ao passar o mouse */
+}
+
+.intro-text-title::after {
+    content: ''; /* Sublinhado decorativo */
+    position: absolute;
+    bottom: -0.25rem;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color); /* Rosa para o sublinhado */
+    opacity: 0.5; /* Leve transparência */
+}
+
+/* Estilo para o subtítulo da introdução na seção de contato */
+.intro-text-subtitle {
+    font-family: 'Lora', serif; /* Fonte padrão */
+    font-size: 1.125rem; /* Tamanho menor para legibilidade */
+    color: var(--text-color); /* Cinza escuro */
+    line-height: 1.5; /* Espaçamento entre linhas */
+    max-width: 600px; /* Limita a largura para melhor legibilidade */
+    margin: 0 auto; /* Centraliza o texto */
+}
+
+/* Estilo para o formulário de contato */
+#contact-form input,
+#contact-form textarea {
+    transition: border-color 0.3s ease, background-color 0.3s ease; /* Transição suave para borda e fundo */
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: var(--primary-color); /* Borda rosa ao focar */
+    background-color: #fff; /* Fundo branco ao focar */
+}
+
+/* Estilo para o botão do formulário */
+#contact-form button,
+#whatsapp-direct {
+    background-color: var(--primary-color); /* Cor de fundo rosa */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave */
+}
+
+#contact-form button:hover,
+#whatsapp-direct:hover {
+    background-color: var(--primary-hover); /* Cor mais escura ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+/* Estilo para o rodapé */
+footer {
+    margin-top: auto; /* Empurra o rodapé para o final da página */
+    width: 100%; /* Ocupa toda a largura */
+    position: relative; /* Permite posicionamento relativo */
+    z-index: 10; /* Garante que o rodapé fique acima de outros elementos */
+}
+
+/* Centraliza o texto do rodapé */
+footer .text-center {
+    text-align: center;
+}
+
+/* Desativa animações para usuários com preferência de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    .animate-fadeIn {
+        transition: none; /* Remove transições para acessibilidade */
+        opacity: 1; /* Elemento sempre visível */
+        transform: translateY(0); /* Elemento na posição final */
+    }
+    .hero-section {
+        background-attachment: scroll; /* Desativa o efeito parallax para acessibilidade */
+    }
+    .faq-answer {
+        transition: none; /* Remove transição do accordion */
+    }
+    #custom-alert {
+        transition: none; /* Remove transição do alert */
+    }
+}
+
+/* Ajustes para tablets e mobile (até 1023px) */
+@media (max-width: 1023px) {
+    .hero-section {
+        min-height: 400px; /* Define altura mínima para a seção hero */
+        background-attachment: scroll; /* Desativa parallax em mobile */
+    }
+    .hero-section h1 {
+        font-size: 2rem; /* Reduz o tamanho do texto em mobile e tablet */
+    }
+    .hero-section .container {
+        padding-top: 80px; /* Ajusta o padding para o header fixo */
+    }
+    #services .grid {
+        grid-template-columns: 1fr; /* Usa uma coluna em mobile e tablet */
+    }
+    footer {
+        padding: 2rem 0; /* Ajusta o padding do rodapé */
+    }
+    footer .text-center {
+        padding-bottom: 2rem; /* Adiciona espaço suficiente no rodapé */
+    }
+    header {
+        padding: 1rem 0; /* Reduz o padding do header em mobile e tablet */
+    }
+    .service-card {
+        margin-bottom: 1rem; /* Espaçamento entre cards em mobile e tablet */
+    }
+    .nav-link.bg-pink-500 span:first-child {
+        font-size: 0.9rem; /* Ajusta o tamanho de "Download" em mobile e tablet */
+    }
+    .nav-link.bg-pink-500 span:last-child {
+        font-size: 0.7rem; /* Ajusta o tamanho de "Mídia Kit" em mobile e tablet */
+        margin-top: 0.1rem; /* Ajusta o espaçamento vertical */
+    }
+    .faq-answer.open {
+        max-height: 300px; /* Aumenta a altura máxima para mobile */
+    }
+    .intro-text-title {
+        font-size: 1.5rem; /* Reduz o tamanho do título em mobile */
+    }
+    .intro-text-subtitle {
+        font-size: 1rem; /* Reduz o tamanho do subtítulo em mobile */
+    }
+    /* Ajusta o layout dos botões da seção Sobre em dispositivos móveis */
+    .about-toggle-container {
+        flex-direction: column; /* Empilha os botões verticalmente em telas pequenas */
+        gap: 0.5rem; /* Reduz o espaçamento entre os botões */
+    }
+    /* Ajusta o layout dos botões do FAQ em dispositivos móveis */
+    .faq-toggle-container {
+        flex-direction: column; /* Empilha os botões verticalmente em telas pequenas */
+        gap: 0.5rem; /* Reduz o espaçamento entre os botões */
+    }
+}
+
+/* Ajustes para desktop (1024px e acima) */
+@media (min-width: 1024px) {
+    header .container {
+        flex-direction: row; /* Organiza o conteúdo em linha */
+        justify-content: center; /* Centraliza o container */
+        align-items: center; /* Alinha verticalmente os itens */
+    }
+    header nav {
+        margin-bottom: 0; /* Remove margem inferior em desktop */
+        margin-left: 0; /* Remove margem à esquerda para alinhamento */
+    }
+    header nav .flex {
+        justify-content: center; /* Centraliza os itens dentro do nav */
+        align-items: center; /* Garante alinhamento vertical dos itens */
+    }
+    header .nav-link {
+        padding: 0 0.5rem; /* Mantém padding reduzido em desktop */
+        line-height: 1.5; /* Ajusta a altura da linha para consistência */
+    }
+    header .nav-link.bg-pink-500 {
+        margin-left: 0; /* Remove margem extra para alinhamento */
+        padding: 0.5rem 1rem; /* Reduz padding para alinhar com outros links */
+        line-height: 1.5; /* Consistência na altura da linha */
+        height: 2rem; /* Define uma altura fixa para alinhamento */
+        display: inline-flex; /* Garante alinhamento vertical */
+        align-items: center; /* Centraliza verticalmente o conteúdo */
+    }
+}
+
+/* Estilo para o texto "Observação:" nas labels do formulário */
+#contact-form label strong {
+    color: var(--primary-color); /* Rosa principal (#ec4899) para o texto "Observação:" */
+    font-weight: 700; /* Negrito para destacar o texto */
+}
