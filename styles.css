@@ -183,6 +183,7 @@ textarea.invalid {
 }
 
 /* Estilo para os botões "Ver mais FAQs" e "Recolher FAQs" */
+/* Botões FAQ: tamanho padronizado */
 #show-more-faqs,
 #collapse-faqs {
     background-color: var(--primary-color); /* Cor de fundo rosa */
@@ -191,6 +192,9 @@ textarea.invalid {
     border-radius: 9999px; /* Bordas totalmente arredondadas */
     font-weight: 600; /* Peso da fonte */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave para cor e escala */
+    min-width: 180px; /* Largura mínima igual ao desktop */
+    width: fit-content;
+    text-align: center;
 }
 
 #show-more-faqs:hover,
@@ -218,6 +222,7 @@ textarea.invalid {
 }
 
 /* Estilo para os botões "Ver mais" e "Recolher" da seção Sobre */
+/* Botões Sobre: tamanho padronizado */
 #show-more-about,
 #collapse-about {
     background-color: var(--primary-color); /* Cor de fundo rosa */
@@ -226,6 +231,9 @@ textarea.invalid {
     border-radius: 9999px; /* Bordas totalmente arredondadas */
     font-weight: 600; /* Peso da fonte */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave para cor e escala */
+    min-width: 180px; /* Largura mínima igual ao desktop */
+    width: fit-content;
+    text-align: center;
 }
 
 #show-more-about:hover,
@@ -445,15 +453,17 @@ footer .text-center {
     .intro-text-subtitle {
         font-size: 1rem; /* Reduz o tamanho do subtítulo em mobile */
     }
-    /* Ajusta o layout dos botões da seção Sobre em dispositivos móveis */
+    /* Ajusta o layout dos botões da seção Sobre em dispositivos móveis, mantendo largura igual ao desktop */
     .about-toggle-container {
         flex-direction: column; /* Empilha os botões verticalmente em telas pequenas */
         gap: 0.5rem; /* Reduz o espaçamento entre os botões */
+        align-items: center; /* Centraliza os botões */
     }
-    /* Ajusta o layout dos botões do FAQ em dispositivos móveis */
+    /* Ajusta o layout dos botões do FAQ em dispositivos móveis, mantendo largura igual ao desktop */
     .faq-toggle-container {
         flex-direction: column; /* Empilha os botões verticalmente em telas pequenas */
         gap: 0.5rem; /* Reduz o espaçamento entre os botões */
+        align-items: center; /* Centraliza os botões */
     }
 }
 
